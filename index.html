@@ -88,16 +88,13 @@
             grid-column: span 2;
             grid-row: span 2;
             justify-content: space-between;
-            
-            /* --- UPDATES FOR BACKGROUND IMAGE --- */
-            background-image: url('bg.jpg'); /* 1. Set the image source */
-            background-size: cover;          /* 2. Scale image to cover the card */
-            background-position: center;     /* 3. Center the image */
-            color: var(--color-surface);     /* 4. Change text color for readability against a dark image */
-            position: relative;              /* 5. Set context for the overlay (if used) */
+            background-image: url('bg.jpg'); 
+            background-size: cover;          
+            background-position: center;     
+            color: var(--color-surface);     
+            position: relative;              
         }
         
-        /* Optional: Add a subtle overlay to ensure text is readable over the image */
         .card-profile::before {
             content: '';
             position: absolute;
@@ -105,36 +102,32 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.35); /* 35% black overlay */
+            background: rgba(0, 0, 0, 0.35); 
             border-radius: var(--border-radius);
             z-index: 1;
         }
 
-        /* Ensure all profile content sits above the overlay */
         .card-profile > * {
             position: relative;
             z-index: 2;
         }
 
-        /* Override specific profile text colors to white for visibility */
         .card-profile .profile-header h1,
         .card-profile .profile-header p,
         .card-profile .card-content-text {
-            color: var(--color-surface); /* White text */
+            color: var(--color-surface); 
         }
 
         .card-profile .profile-header p.tagline {
-            /* Keep accent color for emphasis, but ensure it's bright enough */
             color: var(--color-accent-light); 
         }
 
         .social-links a {
-            color: var(--color-surface); /* White link text */
+            color: var(--color-surface); 
         }
         .social-links a:hover {
             color: var(--color-accent-light);
         }
-
 
         /* Card 2 (Location): Small box (1x1) */
         .card-location {
@@ -167,17 +160,38 @@
             border-bottom: none;
         }
 
-
         /* Card 4 (Case Study): Medium box (1x1) */
         .card-case-study {
             grid-column: span 1;
             grid-row: span 1;
+            justify-content: space-between;
         }
         
         .case-study-title {
             color: var(--color-accent);
             font-size: 1.2em;
             font-weight: 600;
+        }
+
+        /* New Button Styling */
+        .btn-lab {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 16px;
+            background-color: var(--color-accent);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.85em;
+            font-weight: 600;
+            border-radius: 8px;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-lab:hover {
+            background-color: #004d5d;
+            transform: translateY(-2px);
+            color: #ffffff;
         }
 
         /* Card 5 (Hobby): Small box (1x1) */
@@ -218,7 +232,6 @@
             padding: 0 15px;
             font-weight: 500;
         }
-
 
         /* 4. Full Responsiveness (Mobile) */
         @media (max-width: 768px) {
@@ -282,9 +295,12 @@
             </div>
 
             <div class="card card-case-study">
-                <p class="card-title">Featured Project</p>
-                <p class="case-study-title">Starch Gelatinization in Local Kuih</p>
-                <p class="card-content-text">Analyzing texture profiles of *Kuih Lapis* under different moisture and heating conditions.</p>
+                <div>
+                    <p class="card-title">Featured Project</p>
+                    <p class="case-study-title">Starch Gelatinization</p>
+                    <p class="card-content-text">Analyzing texture profiles of *Kuih Lapis*.</p>
+                </div>
+                <a href="https://s79765.github.io/lab-timer-app3/" target="_blank" class="btn-lab">Try My Lab Timer App</a>
             </div>
 
             <div class="card card-hobby">
@@ -293,12 +309,12 @@
             </div>
             
             <div class="card card-reflection">
-                <p class="card-title">Why Food Tech Matters in Malaysia</p>
-                <p class="reflection-content">Sustainable food security is crucial for our future. By optimizing local processing methods, we can reduce waste and improve nutrition.</p>
+                <p class="card-title">Why Food Tech Matters</p>
+                <p class="reflection-content">Sustainable food security is crucial for our future. By optimizing local processing, we reduce waste.</p>
             </div>
 
             <div class="card card-playlist">
-                <p class="card-title">Focus Playlist<<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2jIenVxTPkrBCjetqiYZuy?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>>
+                <p class="card-title">Focus Playlist</p>
                 <div class="music-placeholder">
                     <span>🎵 Study Vibes: Classical Music for Concentration</span>
                 </div>
